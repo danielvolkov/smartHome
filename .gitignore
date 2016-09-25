@@ -3,3 +3,4 @@
 *.war
 *.jar
 *.ear
+target/*

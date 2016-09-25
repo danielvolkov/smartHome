@@ -8,7 +8,7 @@
     <artifactId>smarthome</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>ProselyteSpringMVC</name>
+    <name>MySmartHome</name>
 
     <properties>
         <spring.version>4.1.1.RELEASE</spring.version>
