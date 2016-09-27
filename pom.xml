@@ -62,7 +62,7 @@
     </dependencies>
 
     <build>
-        <finalName>ProselyteSpringMVC</finalName>
+        <finalName>smarthome</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
