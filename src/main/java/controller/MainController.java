@@ -19,11 +19,12 @@ public class MainController {
     }
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute("user") User user){
-        if(user.getLogin().equals("myhome") && user.getPassword().equals("mypass"))
-        {
-            //HttpSession session =
-            return "main";}
-        else{return "index";}
+        if(user.getLogin().equals("myhome") && user.getPassword().equals("mypass")){
+            return "main";
+        }
+        else{
+            return "index";
+        }
     }
 
 }
