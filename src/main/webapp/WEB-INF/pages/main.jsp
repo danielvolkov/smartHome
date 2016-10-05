@@ -71,7 +71,6 @@
 
 	</footer>
 
-	<script src="http://cdn.pubnub.com/pubnub-3.7.11.min.js"></script>
-	<!--<script src="js/app.js"></script> -->
+
 </body>
 </html>
