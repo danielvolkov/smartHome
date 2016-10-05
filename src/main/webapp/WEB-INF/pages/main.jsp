@@ -20,10 +20,10 @@
 
 		<section class="temp-hum-display">
 			<section class="temp-container">
-				<div class="temp" data-temperature="23.5"><span>℃</span></div>
+				<div class="temp" data-temperature="${temperature}"><span> ℃</span></div>
 			</section>
 			<section class="hum-container">
-				<div class="hum" data-humidity="45"><span class="fa wet"> &#37;</span></div>
+				<div class="hum" data-humidity="${humidity}"><span class="fa wet"> &#37;</span></div>
 			</section>
 		</section>
 

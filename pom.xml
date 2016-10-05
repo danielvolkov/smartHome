@@ -68,7 +68,7 @@
     </dependencies>
 
     <build>
-        <finalName>smarthome</finalName>
+        <finalName>home</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

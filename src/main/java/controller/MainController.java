@@ -29,6 +29,10 @@ public class MainController {
             User usercheck = (User) session.getAttribute("user");
             if(usercheck.getLogin().equals("home")){
                 model.setViewName("main");
+                Air air = HomeController.getair();
+                model.addObject("temperature",air.getTemperature());
+                model.addObject("humidity", air.getHumidity());
+
             }
             else{
             model.setViewName("index");}
