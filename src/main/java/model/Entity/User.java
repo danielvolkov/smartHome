@@ -1,4 +1,4 @@
-package model;
+package model.Entity;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 

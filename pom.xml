@@ -12,6 +12,7 @@
 
     <properties>
         <spring.version>4.1.1.RELEASE</spring.version>
+
     </properties>
 
     <dependencies>
@@ -19,6 +20,12 @@
             <groupId>com.pi4j</groupId>
             <artifactId>pi4j-core</artifactId>
             <version>0.0.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mandfer</groupId>
+            <artifactId>sunfun-sensors-pi4j</artifactId>
+            <version>1.0</version>
         </dependency>
 
         <dependency>
@@ -64,6 +71,25 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
             <scope>test</scope>
+        </dependency>
+        <!-- Logging tools -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+
+        <!-- Used by Slf4j as a transitive dependency -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.0.13</version>
         </dependency>
     </dependencies>
 
