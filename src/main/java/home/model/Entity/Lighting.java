@@ -1,4 +1,4 @@
-package model.Entity;
+package home.model.Entity;
 
 /**
  * Created by daniel on 05/10/16.

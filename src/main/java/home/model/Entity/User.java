@@ -1,4 +1,4 @@
-package model.Entity;
+package home.model.Entity;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -7,9 +7,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
  */
 
 public class User {
-    String login;
-    String password;
+   private String login;
+   private String password;
+   private boolean status;
     public User(){}
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
 
     public String getLogin() {
         return login;

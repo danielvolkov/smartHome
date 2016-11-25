@@ -9,7 +9,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="controller"/>
+    <context:component-scan base-package="home" />
     <mvc:resources mapping="/resources/**" location="/resources/"
                    cache-period="31556926"/>
     <mvc:annotation-driven/>

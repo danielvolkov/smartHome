@@ -4,3 +4,4 @@
 *.jar
 *.ear
 target/*
+*.iml

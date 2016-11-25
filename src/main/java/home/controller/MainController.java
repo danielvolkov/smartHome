@@ -1,8 +1,6 @@
-package controller;
+package home.controller;
 
-import model.Entity.Air;
-import model.Entity.Lighting;
-import model.Entity.User;
+import home.model.Entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,36 +17,53 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index(@ModelAttribute("user") User user, HttpSession session, ModelAndView model){
+
         if(session.isNew()) {
             ModelAndView modelAndView = new ModelAndView("index", "user", new User());
             return modelAndView;
-        }else {
+        } else {
             User usercheck = (User) session.getAttribute("user");
-            if(usercheck.getLogin().equals("home")){
+            if (usercheck.getStatus()) {
                 model.setViewName("main");
-                Air air = AirController.getAir();
-                //Lighting lighting = AirController.getLighting();
-                model.addObject("temperature",air.getTemperature());
-                model.addObject("humidity", air.getHumidity());
-                //model.addObject("illumination",lighting.getIlluminatian());
-            }
-            else{
-            model.setViewName("index");}
+                    //Air air = AirController.getAir();
+                    //Lighting lighting = AirController.getLighting();
+                    // model.addObject("temperature",air.getTemperature());
+                    // model.addObject("humidity", air.getHumidity());
+                    //model.addObject("illumination",lighting.getIlluminatian());
+               } else {
+                   model.setViewName("index");
+               }
             return model;
         }
 
     }
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@ModelAttribute("user") User user,ModelAndView model){
+    public ModelAndView login(@ModelAttribute("user") User user, ModelAndView model){
 
         if(user.getLogin().equals("home") && user.getPassword().equals("pass")){
+            user.setStatus(true);
             model.addObject(user);
-            return "redirect:/";
+            model.setViewName("redirect:/");
+            return model;
         }
         else{
-            return "index";
+            model.setViewName("index");
+            return model;
         }
     }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public ModelAndView logout(@ModelAttribute("user") User user, ModelAndView model){
+        if(user!=null){
+            user.setStatus(false);
+            model.setViewName("redirect:/");
+        }
+        else{
+            model.setViewName("index");
+        }
+        return model;
+    }
+
 
     @ModelAttribute("user")
     public User createUser() {

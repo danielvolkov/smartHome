@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
 	<meta charset="utf-8">
@@ -7,69 +8,66 @@
 	<title>MySmartHome</title>
 	<meta name="description" content="Pi House">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="<c:url value="/resources/css/stylemain.css"/> " rel="stylesheet" type="text/css">
+	<link href="<c:url value="/resources/css/bootstrap.css"/> " rel="stylesheet" type="text/css">
+	<link rel="icon" href="<c:url value="/resources/images/home.ico"/>">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<style>
+	body {
+		background-color: #474e5d;;
+	}
+	.container-fluid {
+		padding-top: 40px;
+		padding-bottom: 70px;
+	}
+	.bg-1 {
+		background-color: #1abc9c; /* Green */
+		color: #ffffff;
+	}
+	.bg-2 {
+		background-color: #474e5d; /* Dark Blue */
+		color: #ffffff;
+	}
+	.dvsize {
+		width: 20%;
+		position: relative;
+	}
+	.btnsize {
+		width: 100%;
+
+	}
+</style>
 
 <body>
-	<header>
-		<img src="<c:url value="/resources/images/lego.png"/> ">
-		SMART HOME by D <strong></strong>
-		<div class="pubnub"></div>
-	</header>
-	<section class="container">
+<div class="container-fluid bg-2 text-center">
+	<h1>Turn ON/OFF your light</h1>
 
-		<section class="temp-hum-display">
-			<section class="temp-container">
-				<div class="temp" data-temperature="${temperature}"><span> ℃</span></div>
-			</section>
-			<section class="hum-container">
-				<div class="hum" data-humidity="${humidity}"><span class="fa wet"> &#37;</span></div>
-			</section>
-		</section>
+		<form method=post" action="turnA">
 
-		<section class="pref-container">
-			<section class="preference">
-				<div>
-					<div class="caption">Light</div>
-					<label for="door">
-						<input id="door" type="checkbox">
-						<div class="toggle-button">
-							<div class="switch"></div>
-						</div>
-					</label>
-				</div>
+			<button type="submit" class="btn btn-default btn-lg" >Hallway</button></form>
+		<form method="post" action="turnB">
+			<button type="submit" class="btn btn-default btn-lg">Bath Room</button></form>
+		<form method="post" action="turnC">
+			<button type="submit" class="btn btn-default btn-lg">Kitchen</button></form>
+		<form method="post" action="turnD">
+			<button type="submit" class="btn btn-default btn-lg">Small Room</button></form>
+		<form method="post" action="turnE">
+			<button type="submit" class="btn btn-default btn-lg">Garderobe</button></form>
+		<form method="post" action="turnF">
+			<button type="submit" class="btn btn-default btn-lg">Main Room</button></form>
+		<form method="post" action="turnG">
+			<button type="submit" class="btn btn-default btn-lg">Sconce</button></form>
 
-				<div>
-					<div class="caption">Living Room Light</div>
-					<label class="brightness fa">
-						<input id="lightLiving" type="range" min="0" max="10" step="1" value="0">
-					</label>
-				</div>
-				
-				<div>
-					<div class="caption">Porch Light</div>
-					<label class="brightness fa">
-						<input id="lightPorch" type="range" min="0" max="10" step="1" value="0">
-					</label>
-				</div>
 
-				<div>
-				<!-- flickering light -->
-					<div class="caption">Fireplace</div>
-					<label class="brightness fire fa">
-						<input id="fireplace" type="range" min="0" max="10" step="1" value="0">
-					</label>
-				</div>
+</div>
+<div class="container-fluid ">
+	<form method="post" action="/logout">
+		<button type="submit" class="btn btn-danger btn-lg">Go out</button>
+	</form>
+</div>
 
-			</section>
-
-		</section>
-
-	</section>
-
-	<footer>
-
-	</footer>
 
 
 </body>

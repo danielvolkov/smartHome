@@ -1,28 +1,49 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <link href="<c:url value="/resources/css/reset.css"/> " rel="stylesheet" type="text/css">
-    <link href="<c:url value="/resources/css/structure.css"/> " rel="stylesheet" type="text/css">
-    <title>Home Page</title>
-</head>
-<body>
-<label class="boxBody">Welcome into MySmartHomePage</label>
-<form class="box login" method="post" action="login">
-    <fieldset class="boxBody">
-        <label>Username</label>
-        <input type="text" name="login" tabindex="1" placeholder="login" required>
-        <label>Password</label>
-        <input type="password" name="password" tabindex="2" placeholder="password" required>
-    </fieldset>
-    <footer>
-        <label><input type="checkbox" tabindex="3">Keep me logged in</label>
-        <input type="submit" class="btnLogin" value="Login" tabindex="4">
-    </footer>
-</form>
-<footer id="main">
-    <a href="http://wwww.cssjunction.com">Login Form (HTML5/CSS3 Coded)</a> | <a href="http://www.premiumpixels.com">PSD by Premium Pixels</a>
-</footer>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="<c:url value="/resources/images/home.ico"/>">
+
+    <title>myHome</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="<c:url value="/resources/css/bootstrap.min.css"/> "  rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="<c:url value="/resources/css/signin.css" />" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" method="post" action="login">
+        <h2 class="form-signin-heading" align="center">my Home</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="login" name="login" id="inputEmail" class="form-control" placeholder="login" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Come in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+  </body>
 </html>
