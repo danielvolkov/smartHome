@@ -2,7 +2,6 @@ package home.model.sensors;
 
 import com.pi4j.wiringpi.Gpio;
 import com.pi4j.wiringpi.GpioUtil;
-import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
 import home.model.Entity.Air;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,20 +9,27 @@ import org.springframework.stereotype.Component;
 /**
  * Created by daniel on 25/11/16.
  */
-@Component
+//@Component
 public class DHT11 {
-    @Autowired
+   // @Autowired
     Air air;
     private static final int MAXTIMINGS = 85;
     private int[] dht11_dat = {0, 0, 0, 0, 0};
+    private boolean status;
+
 
     public DHT11() throws Exception {
 
         // setup wiringPi
         if (Gpio.wiringPiSetup() == -1) {
             throw new Exception();
+            //return;
         }
-        GpioUtil.export(3, GpioUtil.DIRECTION_OUT);
+        GpioUtil.export(27, GpioUtil.DIRECTION_OUT);
+    }
+
+    public boolean getStatus(){
+        return status;
     }
 
     public void getAir(int pin) {
@@ -78,9 +84,12 @@ public class DHT11 {
             if ((dht11_dat[2] & 0x80) != 0) {
                 c = -c;
             }
-            float f = c * 1.8f + 32;
+            //float f = c * 1.8f + 32;
             air.setTemperature(c) ;
             air.setHumidity(h);
+            status = true;
+        } else {
+            status = false;
         }
     }
 

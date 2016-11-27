@@ -2,8 +2,9 @@ package home.model.Entity;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Air {
+
    private float temperature;
    private float humidity;
 

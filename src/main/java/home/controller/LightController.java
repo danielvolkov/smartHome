@@ -13,20 +13,85 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class LightController {
-    final GpioController gpio = GpioFactory.getInstance();
-    final GpioPinDigitalOutput pin0 = gpio.provisionDigitalOutputPin(
-            RaspiPin.GPIO_00, "A", PinState.LOW);
-
 
     @RequestMapping(value = "/turnA", method = RequestMethod.POST)
-    public ModelAndView turnA(ModelAndView modelAndView){
-
-        pin0.setShutdownOptions(true, PinState.LOW);
-        pin0.pulse(400);
-        gpio.shutdown();
-        gpio.unprovisionPin(pin0);
-        modelAndView.setViewName("redirect:/");
+    public synchronized ModelAndView turnA(ModelAndView modelAndView){
+        final GpioController gpio = GpioFactory.getInstance();
+        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
+                RaspiPin.GPIO_00, "A", PinState.LOW);
+        pulse(pin,gpio);
+        modelAndView.setViewName("main");
         return modelAndView;
+    }
+
+    @RequestMapping(value = "/turnB", method = RequestMethod.POST)
+    public synchronized ModelAndView turnB(ModelAndView modelAndView){
+        final GpioController gpio = GpioFactory.getInstance();
+        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
+                RaspiPin.GPIO_01, "B", PinState.LOW);
+        pulse(pin,gpio);
+        modelAndView.setViewName("main");
+        return modelAndView;
+    }
+    @RequestMapping(value = "/turnC", method = RequestMethod.POST)
+    public synchronized ModelAndView turnC(ModelAndView modelAndView){
+        final GpioController gpio = GpioFactory.getInstance();
+        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
+                RaspiPin.GPIO_02, "C", PinState.LOW);
+        pulse(pin,gpio);
+        modelAndView.setViewName("main");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/turnD", method = RequestMethod.POST)
+    public synchronized ModelAndView turnD(ModelAndView modelAndView){
+        final GpioController gpio = GpioFactory.getInstance();
+        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
+                RaspiPin.GPIO_03, "D", PinState.LOW);
+        pulse(pin,gpio);
+        modelAndView.setViewName("main");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/turnE", method = RequestMethod.POST)
+    public synchronized ModelAndView turnE(ModelAndView modelAndView){
+        final GpioController gpio = GpioFactory.getInstance();
+        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
+                RaspiPin.GPIO_04, "E", PinState.LOW);
+        pulse(pin,gpio);
+        modelAndView.setViewName("main");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/turnF", method = RequestMethod.POST)
+    public synchronized ModelAndView turnF(ModelAndView modelAndView){
+        final GpioController gpio = GpioFactory.getInstance();
+        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
+                RaspiPin.GPIO_05, "F", PinState.LOW);
+        pulse(pin,gpio);
+        modelAndView.setViewName("main");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/turnG", method = RequestMethod.POST)
+    public synchronized ModelAndView turnG(ModelAndView modelAndView){
+        final GpioController gpio = GpioFactory.getInstance();
+        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
+                RaspiPin.GPIO_06, "G", PinState.LOW);
+        pulse(pin,gpio);
+        modelAndView.setViewName("main");
+        return modelAndView;
+    }
+
+    private void pulse(GpioPinDigitalOutput pin, GpioController gpio) {
+        pin.setShutdownOptions(true, PinState.LOW);
+        pin.low();
+        try {
+            Thread.sleep(200);
+        }catch ( InterruptedException e){ }
+        pin.high();
+        //gpio.shutdown();
+        gpio.unprovisionPin(pin);
     }
 
     public Lighting lighting() {

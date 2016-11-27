@@ -44,7 +44,7 @@
 <div class="container-fluid bg-2 text-center">
 	<h1>Turn ON/OFF your light</h1>
 
-		<form method=post" action="turnA">
+		<form method="post" action="turnA">
 
 			<button type="submit" class="btn btn-default btn-lg" >Hallway</button></form>
 		<form method="post" action="turnB">
@@ -59,11 +59,16 @@
 			<button type="submit" class="btn btn-default btn-lg">Main Room</button></form>
 		<form method="post" action="turnG">
 			<button type="submit" class="btn btn-default btn-lg">Sconce</button></form>
+	<form method="post" action="getAir">
+		<button type="submit" class="btn btn-default btn-lg">Air</button></form>
 
-
+<div>
+	<label>temperature: ${temperature}</label>
+	<label> humidity:  ${humidity}</label>
+</div>
 </div>
 <div class="container-fluid ">
-	<form method="post" action="/logout">
+	<form method="post" action="logout">
 		<button type="submit" class="btn btn-danger btn-lg">Go out</button>
 	</form>
 </div>
