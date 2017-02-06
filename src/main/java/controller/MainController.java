@@ -1,6 +1,6 @@
-package home.controller;
+package controller;
 
-import home.model.entity.User;
+import entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package home.model.entity;
+package entity;
 
 /**
  *

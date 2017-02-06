@@ -1,8 +1,8 @@
-package home.controller;
+package controller;
 
 import com.pi4j.io.gpio.*;
-import home.model.entity.Lighting;
-import home.services.LightService;
+import entity.Lighting;
+import services.LightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

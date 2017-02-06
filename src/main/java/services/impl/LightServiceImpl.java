@@ -1,8 +1,8 @@
-package home.services.impl;
+package services.impl;
 
 import com.pi4j.io.gpio.*;
-import home.services.LightService;
-import home.services.holders.LightGroupHolder;
+import services.LightService;
+import services.holders.LightGroupHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

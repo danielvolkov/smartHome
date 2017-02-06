@@ -1,8 +1,8 @@
-package home.sensors;
+package sensors;
 
 import com.pi4j.wiringpi.Gpio;
 import com.pi4j.wiringpi.GpioUtil;
-import home.model.entity.Air;
+import entity.Air;
 
 /**
  *

@@ -1,8 +1,8 @@
-package home.controller;
+package controller;
 
 
-import home.model.entity.Air;
-import home.sensors.DHT11;
+import entity.Air;
+import sensors.DHT11;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
