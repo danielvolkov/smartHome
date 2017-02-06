@@ -1,6 +1,6 @@
 package home.controller;
 
-import home.model.Entity.User;
+import home.model.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * @author danielvolkov94@gmail.com
+ */
 
 @Controller
 @SessionAttributes("user")
@@ -23,16 +27,7 @@ public class MainController {
             return modelAndView;
         } else {
             User usercheck = (User) session.getAttribute("user");
-            if (usercheck.getStatus()) {
-                model.setViewName("main");
-                    //Air air = AirController.getAir();
-                    //Lighting lighting = AirController.getLighting();
-                    // model.addObject("temperature",air.getTemperature());
-                    // model.addObject("humidity", air.getHumidity());
-                    //model.addObject("illumination",lighting.getIlluminatian());
-               } else {
-                   model.setViewName("index");
-               }
+
             return model;
         }
 
@@ -41,7 +36,6 @@ public class MainController {
     public ModelAndView login(@ModelAttribute("user") User user, ModelAndView model){
 
         if(user.getLogin().equals("home") && user.getPassword().equals("pass")){
-            user.setStatus(true);
             model.addObject(user);
             model.setViewName("redirect:/");
             return model;
@@ -55,7 +49,7 @@ public class MainController {
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public ModelAndView logout(@ModelAttribute("user") User user, ModelAndView model){
         if(user!=null){
-            user.setStatus(false);
+
             model.setViewName("redirect:/");
         }
         else{

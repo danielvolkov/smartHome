@@ -1,25 +1,40 @@
 package home.controller;
 
 import com.pi4j.io.gpio.*;
-import home.model.Entity.Lighting;
+import home.model.entity.Lighting;
+import home.services.LightService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
 /**
- * Created by daniel on 24/11/16.
+ *
+ * @author danielvolkov94@gmail.com
  */
 @Controller
 public class LightController {
+
+    @Autowired
+    LightService lightService;
+
+    public ModelAndView turn(@RequestParam String lightGroup, ModelAndView modelAndView){
+        if(lightGroup != null) {
+            lightService.turnLight(lightGroup);
+        }
+        modelAndView.setViewName("main");
+        return modelAndView;
+    }
 
     @RequestMapping(value = "/turnA", method = RequestMethod.POST)
     public synchronized ModelAndView turnA(ModelAndView modelAndView){
         final GpioController gpio = GpioFactory.getInstance();
         final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
                 RaspiPin.GPIO_00, "A", PinState.LOW);
-        pulse(pin,gpio);
+        //pulse(pin,gpio);
         modelAndView.setViewName("main");
         return modelAndView;
     }
@@ -29,7 +44,7 @@ public class LightController {
         final GpioController gpio = GpioFactory.getInstance();
         final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
                 RaspiPin.GPIO_01, "B", PinState.LOW);
-        pulse(pin,gpio);
+        //pulse(pin,gpio);
         modelAndView.setViewName("main");
         return modelAndView;
     }
@@ -38,7 +53,7 @@ public class LightController {
         final GpioController gpio = GpioFactory.getInstance();
         final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
                 RaspiPin.GPIO_02, "C", PinState.LOW);
-        pulse(pin,gpio);
+        //pulse(pin,gpio);
         modelAndView.setViewName("main");
         return modelAndView;
     }
@@ -48,7 +63,7 @@ public class LightController {
         final GpioController gpio = GpioFactory.getInstance();
         final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
                 RaspiPin.GPIO_03, "D", PinState.LOW);
-        pulse(pin,gpio);
+       // pulse(pin,gpio);
         modelAndView.setViewName("main");
         return modelAndView;
     }
@@ -58,7 +73,7 @@ public class LightController {
         final GpioController gpio = GpioFactory.getInstance();
         final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
                 RaspiPin.GPIO_04, "E", PinState.LOW);
-        pulse(pin,gpio);
+        //pulse(pin,gpio);
         modelAndView.setViewName("main");
         return modelAndView;
     }
@@ -68,7 +83,7 @@ public class LightController {
         final GpioController gpio = GpioFactory.getInstance();
         final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
                 RaspiPin.GPIO_05, "F", PinState.LOW);
-        pulse(pin,gpio);
+        //pulse(pin,gpio);
         modelAndView.setViewName("main");
         return modelAndView;
     }
@@ -78,21 +93,12 @@ public class LightController {
         final GpioController gpio = GpioFactory.getInstance();
         final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(
                 RaspiPin.GPIO_06, "G", PinState.LOW);
-        pulse(pin,gpio);
+        //pulse(pin,gpio);
         modelAndView.setViewName("main");
         return modelAndView;
     }
 
-    private void pulse(GpioPinDigitalOutput pin, GpioController gpio) {
-        pin.setShutdownOptions(true, PinState.LOW);
-        pin.low();
-        try {
-            Thread.sleep(200);
-        }catch ( InterruptedException e){ }
-        pin.high();
-        //gpio.shutdown();
-        gpio.unprovisionPin(pin);
-    }
+
 
     public Lighting lighting() {
         Lighting lighting = new Lighting();

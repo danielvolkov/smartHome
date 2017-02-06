@@ -44,20 +44,26 @@
 <div class="container-fluid bg-2 text-center">
 	<h1>Turn ON/OFF your light</h1>
 
-		<form method="post" action="turnA">
-
+		<form method="post" action="turn">
+			<input type="hidden" name="lightGroup" value="A">
 			<button type="submit" class="btn btn-default btn-lg" >Hallway</button></form>
-		<form method="post" action="turnB">
+		<form method="post" action="turn">
+			<input type="hidden" name="lightGroup" value="B">
 			<button type="submit" class="btn btn-default btn-lg">Bath Room</button></form>
-		<form method="post" action="turnC">
+		<form method="post" action="turn">
+			<input type="hidden" name="lightGroup" value="C">
 			<button type="submit" class="btn btn-default btn-lg">Kitchen</button></form>
-		<form method="post" action="turnD">
+		<form method="post" action="turn">
+			<input type="hidden" name="lightGroup" value="D">
 			<button type="submit" class="btn btn-default btn-lg">Small Room</button></form>
-		<form method="post" action="turnE">
+		<form method="post" action="turn">
+			<input type="hidden" name="lightGroup" value="E">
 			<button type="submit" class="btn btn-default btn-lg">Garderobe</button></form>
-		<form method="post" action="turnF">
+		<form method="post" action="turn">
+			<input type="hidden" name="lightGroup" value="F">
 			<button type="submit" class="btn btn-default btn-lg">Main Room</button></form>
-		<form method="post" action="turnG">
+		<form method="post" action="turn">
+			<input type="hidden" name="lightGroup" value="G">
 			<button type="submit" class="btn btn-default btn-lg">Sconce</button></form>
 	<form method="post" action="getAir">
 		<button type="submit" class="btn btn-default btn-lg">Air</button></form>

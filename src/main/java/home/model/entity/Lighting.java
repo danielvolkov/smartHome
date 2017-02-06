@@ -1,8 +1,10 @@
-package home.model.Entity;
+package home.model.entity;
 
 /**
- * Created by daniel on 05/10/16.
+ *
+ * @author danielvolkov94@gmail.com
  */
+
 public class Lighting {
     float illuminatian;
 

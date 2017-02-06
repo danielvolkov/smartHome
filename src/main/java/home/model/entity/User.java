@@ -1,23 +1,23 @@
-package home.model.Entity;
-
-import org.springframework.web.bind.annotation.ModelAttribute;
+package home.model.entity;
 
 /**
- * Created by daniel on 26/09/16.
+ *
+ * @author danielvolkov94@gmail.com
  */
 
 public class User {
-   private String login;
-   private String password;
-   private boolean status;
+    private String login;
+    private String password;
+    private String role;
+
     public User(){}
 
-    public boolean getStatus() {
-        return status;
+    public String getRole() {
+        return role;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getLogin() {

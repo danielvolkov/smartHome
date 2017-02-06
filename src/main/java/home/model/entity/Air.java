@@ -1,8 +1,11 @@
-package home.model.Entity;
+package home.model.entity;
 
-import org.springframework.stereotype.Component;
+/**
+ *
+ * @author danielvolkov94@gmail.com
+ */
 
-//@Component
+
 public class Air {
 
    private float temperature;

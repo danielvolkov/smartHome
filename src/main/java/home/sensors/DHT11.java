@@ -1,17 +1,15 @@
-package home.model.sensors;
+package home.sensors;
 
 import com.pi4j.wiringpi.Gpio;
 import com.pi4j.wiringpi.GpioUtil;
-import home.model.Entity.Air;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import home.model.entity.Air;
 
 /**
- * Created by daniel on 25/11/16.
+ *
+ * @author danielvolkov94@gmail.com
  */
-//@Component
 public class DHT11 {
-   // @Autowired
+
     Air air;
     private static final int MAXTIMINGS = 85;
     private int[] dht11_dat = {0, 0, 0, 0, 0};
