@@ -32,35 +32,5 @@ public class MainController {
         }
 
     }
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView login(@ModelAttribute("user") User user, ModelAndView model){
-
-        if(user.getLogin().equals("home") && user.getPassword().equals("pass")){
-            model.addObject(user);
-            model.setViewName("redirect:/");
-            return model;
-        }
-        else{
-            model.setViewName("index");
-            return model;
-        }
-    }
-
-    @RequestMapping(value = "/logout", method = RequestMethod.POST)
-    public ModelAndView logout(@ModelAttribute("user") User user, ModelAndView model){
-        if(user!=null){
-
-            model.setViewName("redirect:/");
-        }
-        else{
-            model.setViewName("index");
-        }
-        return model;
-    }
-
-
-    @ModelAttribute("user")
-    public User createUser() {
-        return new User();
-    }
 }
+
