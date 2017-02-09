@@ -16,8 +16,7 @@ import javax.servlet.http.HttpSession;
  */
 
 @Controller
-@SessionAttributes("user")
-public class MainController {
+public class IndexController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index(@ModelAttribute("user") User user, HttpSession session, ModelAndView model){
@@ -26,8 +25,10 @@ public class MainController {
             ModelAndView modelAndView = new ModelAndView("index", "user", new User());
             return modelAndView;
         } else {
-            User usercheck = (User) session.getAttribute("user");
-
+            User userCheck = (User) session.getAttribute("user");
+            if (userCheck!=null){
+                model.setViewName("main");
+            }
             return model;
         }
 
