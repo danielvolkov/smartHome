@@ -21,6 +21,7 @@ public class LightController {
     @Autowired
     LightService lightService;
 
+    @RequestMapping(value = "/turn", method = RequestMethod.POST)
     public ModelAndView turn(@RequestParam String lightGroup, ModelAndView modelAndView){
         if(lightGroup != null) {
             lightService.turnLight(lightGroup);

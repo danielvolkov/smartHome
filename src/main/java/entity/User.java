@@ -1,16 +1,29 @@
 package entity;
 
+import javax.persistence.*;
+
 /**
  *
  * @author danielvolkov94@gmail.com
  */
 
+@Entity
+@Table(name = "users")
 public class User {
+
+    @Id
+    @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userId;
+
+    @Column(name = "login")
     private String login;
+    @Column(name = "password")
     private String password;
 
 
     public User(){}
+
 
     public String getLogin() {
         return login;
@@ -24,9 +37,16 @@ public class User {
         return password;
     }
 
-
     public void setPassword(String password)
     {
         this.password = password;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

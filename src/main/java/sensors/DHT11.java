@@ -2,7 +2,7 @@ package sensors;
 
 import com.pi4j.wiringpi.Gpio;
 import com.pi4j.wiringpi.GpioUtil;
-import entity.Air;
+
 
 /**
  *
@@ -10,7 +10,7 @@ import entity.Air;
  */
 public class DHT11 {
 
-    Air air;
+   // Air air;
     private static final int MAXTIMINGS = 85;
     private int[] dht11_dat = {0, 0, 0, 0, 0};
     private boolean status;
@@ -83,8 +83,8 @@ public class DHT11 {
                 c = -c;
             }
             //float f = c * 1.8f + 32;
-            air.setTemperature(c) ;
-            air.setHumidity(h);
+           // air.setTemperature(c) ;
+          //  air.setHumidity(h);
             status = true;
         } else {
             status = false;

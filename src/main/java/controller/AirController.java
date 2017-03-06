@@ -1,7 +1,7 @@
 package controller;
 
 
-import entity.Air;
+
 import sensors.DHT11;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AirController {
     final int GPIO_PIN_27 = 27 ;
 
-    Air air;
+  //  Air air;
 
 
     DHT11 dht11;
@@ -24,8 +24,8 @@ public class AirController {
         while ( !dht11.getStatus() ) {
             dht11.getAir(GPIO_PIN_27);
         }
-        model.addObject("temperature", air.getTemperature());
-        model.addObject("humidity",air.getHumidity());
+       // model.addObject("temperature", air.getTemperature());
+       // model.addObject("humidity",air.getHumidity());
         model.setViewName("main");
         return model;
     }
