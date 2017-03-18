@@ -23,10 +23,10 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView login(@ModelAttribute User user, ModelAndView modelAndView){
         if(user != null) {
-            if(userService.login(user)){
+            if (userService.login(user)) {
                 modelAndView.addObject(user.getLogin());
-                modelAndView.setViewName("index");
-            }else {
+                modelAndView.setViewName("main");
+            } else {
                 modelAndView.setViewName("index");
             }
         }

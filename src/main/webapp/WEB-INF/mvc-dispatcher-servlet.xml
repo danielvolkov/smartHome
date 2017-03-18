@@ -12,10 +12,12 @@
     <context:component-scan base-package="controller" />
     <context:component-scan base-package="entity" />
     <context:component-scan base-package="services" />
-    <mvc:resources mapping="/resources/**" location="/resources/"
-                   cache-period="31556926"/>
+    <context:component-scan base-package="dao" />
+
     <mvc:annotation-driven/>
 
+    <mvc:resources mapping="/resources/**" location="/resources/"
+                   cache-period="31556926"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>

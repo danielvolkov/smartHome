@@ -2,9 +2,10 @@ package dao.impl;
 
 import dao.UserDao;
 import entity.User;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  * @author danielvolkov94@gmail.com
@@ -12,11 +13,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
-    private SessionFactory sessionFactory;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Override
     public User getUserById(int id) {
@@ -25,8 +23,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getUserByLogin(String login) {
-        Session session = this.sessionFactory.getCurrentSession();
-        User user = (User) session.load(User.class, login);
-        return user;
+
+        return entityManager.find(User.class, login);
     }
 }

@@ -1,6 +1,8 @@
 package services.impl;
 
+import dao.UserDao;
 import entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import services.UserService;
 
@@ -10,8 +12,14 @@ import services.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    @Autowired
+    private UserDao userDao;
+
     @Override
     public boolean login(User user) {
-        return false;
+        User existUser = userDao.getUserByLogin(user.getLogin());
+        String password = user.getPassword();
+        return password.equals(existUser.getPassword());
     }
 }
