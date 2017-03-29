@@ -20,7 +20,8 @@ public class ClimateController {
     @Autowired
     ClimateService climateService;
 
-    @RequestMapping(value = "/get/climate", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/climate", method = RequestMethod.GET,
+            produces = "application/json")
     public Climate getClimate() {
          //read http://www.instructables.com/id/DHT11-TempHum-Sensor-With-Raspberry-Pi-Using-JAVA/
         /*while ( !dht11.getStatus() ) {
