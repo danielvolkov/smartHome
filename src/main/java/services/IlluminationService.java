@@ -2,7 +2,6 @@ package services;
 
 import entity.Lighting;
 
-
 /**
  *
  * @author danielvolkov94@gmail.com
