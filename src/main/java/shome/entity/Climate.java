@@ -2,6 +2,10 @@ package shome.entity;
 
 import shome.Room;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -9,13 +13,25 @@ import java.util.Date;
  * @author danielvolkov94@gmail.com
  */
 
-
+@Entity
+@Table(name = "climate")
 public class Climate {
 
+    @Column(name = "climate_id")
+    @Id
+    private int climateId;
+
+    @Column(name = "temperature")
     private double temperature;
-    private int humidity;
-    private Room room;
+
+    @Column(name = "humidity")
+    private double humidity;
+
+    @Column(name = "date_time")
     private Date currentDateTime;
+
+    public Climate() {
+    }
 
     public double getTemperature() {
         return temperature;
@@ -25,19 +41,20 @@ public class Climate {
         this.temperature = temperature;
     }
 
-    public int getHumidity() {
+
+    public int getClimateId() {
+        return climateId;
+    }
+
+    public void setClimateId(int climateId) {
+        this.climateId = climateId;
+    }
+
+    public double getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(int humidity) {
+    public void setHumidity(double humidity) {
         this.humidity = humidity;
-    }
-
-    public Room getRoom() {
-        return room;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
     }
 }
