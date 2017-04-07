@@ -1,8 +1,8 @@
-package services.impl;
+package shome.services.impl;
 
-import entity.Lighting;
+import shome.entity.Lighting;
 import org.springframework.stereotype.Service;
-import services.IlluminationService;
+import shome.services.IlluminationService;
 
 
 /**

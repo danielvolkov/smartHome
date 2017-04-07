@@ -1,10 +1,10 @@
-package services.impl;
+package shome.services.impl;
 
-import dao.UserDao;
-import entity.User;
+import shome.dao.UserDao;
+import shome.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import services.UserService;
+import shome.services.UserService;
 
 /**
  * Created by daniel on 2/7/17.

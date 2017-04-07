@@ -1,4 +1,8 @@
-package entity;
+package shome.entity;
+
+import shome.Room;
+
+import java.util.Date;
 
 /**
  *
@@ -8,9 +12,10 @@ package entity;
 
 public class Climate {
 
-   private double temperature;
-   private int humidity;
-   private Room room;
+    private double temperature;
+    private int humidity;
+    private Room room;
+    private Date currentDateTime;
 
     public double getTemperature() {
         return temperature;

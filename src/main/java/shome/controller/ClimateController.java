@@ -1,12 +1,12 @@
-package controller;
+package shome.controller;
 
 
-import entity.Climate;
+import shome.entity.Climate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import services.ClimateService;
+import shome.services.ClimateService;
 
 /**
  *

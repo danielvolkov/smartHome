@@ -1,6 +1,6 @@
-package dao;
+package shome.dao;
 
-import entity.User;
+import shome.entity.User;
 
 /**
  * @author danielvolkov94@gmail.com

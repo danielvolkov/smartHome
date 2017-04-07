@@ -1,4 +1,4 @@
-package entity;
+package shome.entity;
 
 import javax.persistence.Entity;
 import java.util.Date;
@@ -7,7 +7,7 @@ import java.util.Date;
  *
  * @author danielvolkov94@gmail.com
  */
-@Entity
+
 public class Lighting {
     private Date lastDateTime;
     private float illuminatian;

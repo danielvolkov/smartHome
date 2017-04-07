@@ -1,6 +1,6 @@
-package services;
+package shome.services;
 
-import entity.Climate;
+import shome.entity.Climate;
 
 /**
  * Created by Daniel on 29.03.2017.

@@ -1,4 +1,4 @@
-package entity;
+package shome.entity;
 
 import javax.persistence.*;
 
@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User {
 
-
     @Column(name = "user_id")
     private int userId;
     @Id
@@ -19,7 +18,6 @@ public class User {
     private String login;
     @Column(name = "password")
     private String password;
-
 
     public User(){}
 

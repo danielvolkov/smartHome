@@ -1,13 +1,11 @@
-package controller;
+package shome.controller;
 
-import entity.User;
+import shome.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import services.UserService;
-
-import javax.servlet.http.HttpSession;
+import shome.services.UserService;
 
 /**
  *

@@ -1,7 +1,7 @@
-package dao.impl;
+package shome.dao.impl;
 
-import dao.UserDao;
-import entity.User;
+import shome.dao.UserDao;
+import shome.entity.User;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

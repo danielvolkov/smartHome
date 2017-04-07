@@ -1,8 +1,8 @@
-package services.impl;
+package shome.services.impl;
 
-import entity.Climate;
+import shome.entity.Climate;
 import org.springframework.stereotype.Service;
-import services.ClimateService;
+import shome.services.ClimateService;
 
 /**
  * Created by Daniel on 29.03.2017.

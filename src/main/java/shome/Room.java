@@ -1,8 +1,8 @@
-package entity;
+package shome;
 
 /**
  * @author danielvolkov94@gmail.com
  */
 public enum Room {
-    BEDROOM,KITCHEN
+    BIGROOM,HALLWAY
 }

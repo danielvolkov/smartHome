@@ -1,6 +1,6 @@
-package services;
+package shome.services;
 
-import entity.User;
+import shome.entity.User;
 
 /**
  *

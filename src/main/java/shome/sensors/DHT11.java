@@ -1,4 +1,4 @@
-package sensors;
+package shome.sensors;
 
 import com.pi4j.wiringpi.Gpio;
 import com.pi4j.wiringpi.GpioUtil;
