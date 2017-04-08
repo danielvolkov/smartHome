@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -12,7 +13,9 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "lighting")
-public class Lighting {
+public class Lighting implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Column(name = "illumination_id")
     @Id

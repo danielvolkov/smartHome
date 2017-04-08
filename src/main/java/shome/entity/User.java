@@ -1,6 +1,7 @@
 package shome.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  *
@@ -9,10 +10,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Column(name = "user_id")
     private int userId;
+
     @Id
     @Column(name = "login", unique = true)
     private String login;
