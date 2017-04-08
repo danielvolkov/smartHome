@@ -13,6 +13,10 @@ public class ClimateServiceImpl implements ClimateService {
     @Override
     public Climate getCurrentClimate() {
 
-        return new Climate();
+        Climate climate = new Climate();
+        climate.setClimateId(1);
+        climate.setHumidity(4);
+        climate.setTemperature(17);
+        return climate;
     }
 }

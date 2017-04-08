@@ -1,5 +1,6 @@
 package shome.controller;
 
+import org.springframework.web.bind.annotation.RestController;
 import shome.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,11 +15,11 @@ import javax.servlet.http.HttpSession;
  * @author danielvolkov94@gmail.com
  */
 
-@Controller
+@RestController
 public class IndexController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView index(@ModelAttribute("user") User user, HttpSession session, ModelAndView model){
+    public ModelAndView index(User user, HttpSession session, ModelAndView model){
 
         if(session.isNew()) {
             ModelAndView modelAndView = new ModelAndView("index", "user", new User());

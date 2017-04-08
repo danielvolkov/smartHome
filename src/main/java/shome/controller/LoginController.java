@@ -11,8 +11,7 @@ import shome.services.UserService;
  *
  * @author danielvolkov94@gmail.com
  */
-@Controller
-@SessionAttributes("user")
+@RestController
 public class LoginController {
 
     @Autowired

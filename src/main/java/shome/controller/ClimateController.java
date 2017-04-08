@@ -23,14 +23,7 @@ public class ClimateController {
     @RequestMapping(value = "/get/climate", method = RequestMethod.GET,
             produces = "application/json")
     public Climate getClimate() {
-         //read http://www.instructables.com/id/DHT11-TempHum-Sensor-With-Raspberry-Pi-Using-JAVA/
-        /*while ( !dht11.getStatus() ) {
-            dht11.getAir(GPIO_PIN_27);
-        }
-        model.addObject("temperature", air.getTemperature());
-        model.addObject("humidity",air.getHumidity());
-        model.setViewName("main");
-        */
+
         Climate climate = climateService.getCurrentClimate();
         return climate;
     }
