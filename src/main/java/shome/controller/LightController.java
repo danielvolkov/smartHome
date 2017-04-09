@@ -20,7 +20,7 @@ public class LightController {
     @Autowired
     LightService lightService;
 
-    @RequestMapping(value = "/turn/{lightGroup}", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/turn/{lightGroup}", method = RequestMethod.POST)
     public ResponseEntity<String> turn(@PathVariable String lightGroup){
         HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
         try {

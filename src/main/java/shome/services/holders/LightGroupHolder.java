@@ -32,7 +32,7 @@ public class LightGroupHolder {
             return pin;
         }
         else {
-            throw new PinNotFondException("Light group:" +lightGroup + "does not match with Pin");
+            throw new PinNotFondException("Light group:" +lightGroup + " does not match with Pin");
         }
     }
 }
