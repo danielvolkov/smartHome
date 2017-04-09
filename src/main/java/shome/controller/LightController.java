@@ -29,7 +29,7 @@ public class LightController {
         } catch (Exception e){
             e.printStackTrace();
         }
-        return new ResponseEntity<String>(httpStatus);
+        return new ResponseEntity<>(httpStatus);
     }
 
 }

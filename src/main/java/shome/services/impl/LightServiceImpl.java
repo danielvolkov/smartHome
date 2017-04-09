@@ -32,7 +32,7 @@ public class LightServiceImpl implements LightService {
         pin.setShutdownOptions(true, PinState.LOW);
         pin.low();
         try {
-            Thread.sleep(200);
+            Thread.sleep(100);
         }catch ( InterruptedException e){ }
         pin.high();
         //gpio.shutdown();
