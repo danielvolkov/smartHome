@@ -7,4 +7,5 @@ import shome.entity.Climate;
  */
 public interface ClimateDao {
     Climate getClimateById(int id);
+    Climate getCurrentClimate();
 }

@@ -60,4 +60,12 @@ public class Climate implements Serializable {
     public void setHumidity(double humidity) {
         this.humidity = humidity;
     }
+
+    public Date getCurrentDateTime() {
+        return currentDateTime;
+    }
+
+    public void setCurrentDateTime(Date currentDateTime) {
+        this.currentDateTime = currentDateTime;
+    }
 }
