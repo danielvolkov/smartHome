@@ -3,6 +3,7 @@ package shome.services.holders;
 import com.pi4j.io.gpio.Pin;
 import com.pi4j.io.gpio.RaspiPin;
 import org.springframework.stereotype.Component;
+import shome.exceptions.PinNotFondException;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -25,7 +26,13 @@ public class LightGroupHolder {
         lightGroupsMap.put("G", RaspiPin.GPIO_06);
     }
 
-    public Pin getPin(String lightGroup){
-        return lightGroupsMap.get(lightGroup);
+    public Pin getPin(String lightGroup) throws PinNotFondException{
+        Pin pin = lightGroupsMap.get(lightGroup);
+        if(pin != null){
+            return pin;
+        }
+        else {
+            throw new PinNotFondException("Light group:" +lightGroup + "does not match with Pin");
+        }
     }
 }

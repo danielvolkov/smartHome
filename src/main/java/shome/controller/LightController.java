@@ -1,11 +1,13 @@
 package shome.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import shome.exceptions.PinNotFondException;
 import shome.services.LightService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.spi.ResourceBundleControlProvider;
 
 
 /**
@@ -18,11 +20,16 @@ public class LightController {
     @Autowired
     LightService lightService;
 
-    @RequestMapping(value = "/turn", method = RequestMethod.POST)
-    public void turn(@RequestParam String lightGroup){
-        if(lightGroup != null) {
+    @RequestMapping(value = "/turn/{lightGroup}", method = RequestMethod.POST, consumes = "application/json")
+    public ResponseEntity<String> turn(@PathVariable String lightGroup){
+        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+        try {
             lightService.turnLight(lightGroup);
+            httpStatus = HttpStatus.ACCEPTED;
+        } catch (Exception e){
+            e.printStackTrace();
         }
+        return new ResponseEntity<String>(httpStatus);
     }
 
 }
