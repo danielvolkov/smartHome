@@ -25,7 +25,7 @@ public class Lighting implements Serializable {
     private Date lastDateTime;
 
     @Column(name = "illumination")
-    private float illuminatian;
+    private float illumination;
 
     @Column(name = "status")
     private boolean predicateStatus;
@@ -33,12 +33,12 @@ public class Lighting implements Serializable {
     public Lighting() {
     }
 
-    public float getIlluminatian() {
-        return illuminatian;
+    public float getIllumination() {
+        return illumination;
     }
 
-    public void setIlluminatian(float illuminatian) {
-        this.illuminatian = illuminatian;
+    public void setIllumination(float illuminatian) {
+        this.illumination = illuminatian;
     }
 
     public boolean isPredicateStatus() {
