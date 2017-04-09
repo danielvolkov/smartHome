@@ -3,7 +3,6 @@ package shome.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import shome.exceptions.PinNotFondException;
 import shome.services.LightService;
 import org.springframework.beans.factory.annotation.Autowired;
 

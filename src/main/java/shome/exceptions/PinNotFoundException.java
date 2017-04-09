@@ -5,9 +5,9 @@ package shome.exceptions;
  *
  * @author danielvolkov94@gmail.com
  */
-public class PinNotFondException extends Exception {
+public class PinNotFoundException extends Exception {
 
-    public PinNotFondException(String infMessage) {
+    public PinNotFoundException(String infMessage) {
         super(infMessage);
     }
 }

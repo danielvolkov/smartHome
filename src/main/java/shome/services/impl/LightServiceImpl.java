@@ -1,7 +1,7 @@
 package shome.services.impl;
 
 import com.pi4j.io.gpio.*;
-import shome.exceptions.PinNotFondException;
+import shome.exceptions.PinNotFoundException;
 import shome.services.LightService;
 import shome.services.holders.LightGroupHolder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class LightServiceImpl implements LightService {
     LightGroupHolder lightGroupHolder;
 
     @Override
-    public void turnLight(String lightGroup) throws PinNotFondException  {
+    public void turnLight(String lightGroup) throws PinNotFoundException {
         Pin raspiPin = lightGroupHolder.getPin(lightGroup);
 
         final GpioController gpio = GpioFactory.getInstance();
