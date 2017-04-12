@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import shome.services.ClimateService;
 
 /**
- * Created by Daniel on 29.03.2017.
+ * @author danielvolkov94@gmail.com
  */
 @Service
 @Transactional

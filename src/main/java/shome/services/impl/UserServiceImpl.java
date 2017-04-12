@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import shome.services.UserService;
 
 /**
- * Created by daniel on 2/7/17.
+ * @author danielvolkov94@gmail.com
  */
 
 @Service
