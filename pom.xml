@@ -96,8 +96,6 @@
         </dependency>
 
         <!-- Hibernate -->
-
-
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -144,7 +142,6 @@
             <artifactId>webcam-capture</artifactId>
             <version>0.3.10</version>
         </dependency>
-
 
     </dependencies>
 

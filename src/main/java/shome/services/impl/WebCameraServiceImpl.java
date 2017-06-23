@@ -31,11 +31,14 @@ public class WebCameraServiceImpl implements WebCameraService {
         //CamShot shot = new CamShot();
         BufferedImage bufferedImage = null;
         Webcam webcam = camHolder.getWebCam();
-
-        if (webcam.isOpen()){
-            bufferedImage = webcam.getImage();
-            //shot.setImage(bufferedImage.;
-            //shot.setDate(new Date());
+        if(webcam!= null) {
+            webcam.open();
+            if (webcam.isOpen()) {
+                bufferedImage = webcam.getImage();
+                        //shot.setImage(bufferedImage.;
+                        //shot.setDate(new Date())
+                webcam.close();
+            }
         }
 
         return bufferedImage;

@@ -24,10 +24,10 @@ public class WebCamController {
     @RequestMapping(value = "/get/camshot", method = RequestMethod.GET,
             produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] getCamShotImage() {
-        BufferedImage  image = cameraService.makeShot();
+        BufferedImage image = cameraService.makeShot();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
-            ImageIO.write(image, "png", baos);
+            ImageIO.write(image, "PNG", baos);
         } catch (IOException e) {
             e.printStackTrace();
         }
